@@ -7,8 +7,20 @@ setup(name='skeletons',
       version=version,
       description="Skeletons for server configs",
       long_description="""\
+Generate config files from 'skeleton' templates.
+Module provides template extensions for paster create command.
 """,
-      classifiers=[], # Get strings from http://pypi.python.org/pypi?%3Aaction=list_classifiers
+      classifiers=[
+          'Development Status :: 1 - Planning',
+          'Environment :: Console',
+          'Framework :: Paste',
+          'Intended Audience :: Developers',
+          'License :: OSI Approved :: BSD License',
+          'Natural Language :: Russian',
+          'Programming Language :: Python',
+          'Topic :: System :: Installation/Setup',
+          'Topic :: Utilities',
+      ], # Get strings from http://pypi.python.org/pypi?%3Aaction=list_classifiers
       keywords='',
       author='Ivan Gromov',
       author_email='ivan.gromov@redsolution.ru',
