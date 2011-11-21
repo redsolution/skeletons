@@ -1,15 +1,19 @@
 from setuptools import setup, find_packages
 import sys, os
 
+
+def read_file(filename):
+    try:
+        return open(filename, 'r').read()
+    except: # Everything!
+        return ''
+
 version = '0.1'
 
 setup(name='skeletons',
       version=version,
       description="Skeletons for server configs",
-      long_description="""\
-Generate config files from 'skeleton' templates.
-Module provides template extensions for paster create command.
-""",
+      long_description=read_file('README'),
       classifiers=[
           'Development Status :: 1 - Planning',
           'Environment :: Console',
