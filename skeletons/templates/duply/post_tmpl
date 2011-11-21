@@ -1,0 +1,1 @@
+/bin/rm -r /var/backups/postgres/{{dbname}}.sql.gz

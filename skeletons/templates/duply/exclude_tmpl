@@ -1,0 +1,3 @@
++ /var/backups/postgres/{{dbname}}.sql.gz
++ /srv/www/{{package}}
+/

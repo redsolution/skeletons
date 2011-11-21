@@ -1,0 +1,1 @@
+sudo -u postgres /usr/bin/pg_dump --create {{dbname}} | gzip --rsyncable > /var/backups/postgres/{{dbname}}.sql.gz
