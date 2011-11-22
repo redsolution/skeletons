@@ -5,9 +5,7 @@ check process {{ package }} with pidfile /var/run/vhosts/{{ package }}.pid
     if memory usage > 25% 20 cycles then restart
     if cpu usage > 75% 5 times within 10 cycles then alert
     if cpu usage > 75% 20 cycles then restart
-{% for site in sites %}
     if failed url http://{{ main_domain }} 5 times within 10 cycles then alert
     if failed url http://{{ main_domain }} 20 cycles then restart
-{% endfor %}
     if 10 restarts within 25 cycles then timeout
 
