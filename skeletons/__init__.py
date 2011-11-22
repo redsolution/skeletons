@@ -30,7 +30,7 @@ class LighttpdModFastCGI(BaseTemplate):
     vars = [
         var('domain', 'Main domain(s)'),
         var('redirects', 'Site redirects'),
-        var('project_root', 'Where your site is located'),
+        var('project_root', 'Where your site is located', default='/srv/www'),
     ]
 
     def build_regexp(self, value):
