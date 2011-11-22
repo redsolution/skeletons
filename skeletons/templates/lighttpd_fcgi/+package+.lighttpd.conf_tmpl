@@ -19,7 +19,7 @@ $HTTP["host"] =~ "{{ site_domains }}" {
     fastcgi.server = (
         "/fcgi" => (
             "main" => (
-                "socket" => "/var/run/{{package}}/{{ package }}.socket",
+                "socket" => "/var/run/vhosts/{{ package }}.socket",
                 "check-local" => "disable",
             )
         )

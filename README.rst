@@ -47,6 +47,8 @@ Lighttpd + mod_fcgi
 
 This template contains configuration for lighttpd web server to run website
  as separate process, launched and monitored by monit deamon.
+ Pidfiles and UNIX sockets located at ``/var/run/vhosts/``,
+ logs collected in ``/var/log/lighttpd/vhosts``.
 
 **domain**
     Main domain(s). For example: mysite.com, mysite.org, мойсайт.рф

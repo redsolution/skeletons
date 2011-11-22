@@ -1,4 +1,4 @@
-check process {{ package }} with pidfile /var/run/{{ package }}/{{ package }}.pid
+check process {{ package }} with pidfile /var/run/vhosts/{{ package }}.pid
     start program = "/bin/bash -c '{{project_root}}/{{package}}/deploy/{{package}}.fcgi start'"
     stop program  = "/bin/bash -c '{{project_root}}/{{package}}/deploy/{{package}}.fcgi stop'"
     if memory usage > 25% 5 times within 10 cycles then alert

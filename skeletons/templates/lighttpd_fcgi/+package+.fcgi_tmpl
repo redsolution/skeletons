@@ -17,8 +17,8 @@ PATH=/sbin:/usr/sbin:/bin:/usr/bin
 DESC="Daemon of the {{package}}"
 NAME={{package}}
 
-RUN_DIR=/var/run/$NAME
-LOG_DIR=/var/log/$NAME
+RUN_DIR=/var/run/vhosts/
+LOG_DIR=/var/log/lighttpd/vhosts/$NAME
 UPLOAD_DIR=/srv/www/{{package}}/media/upload
 
 PIDFILE=$RUN_DIR/$NAME.pid
