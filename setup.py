@@ -8,7 +8,7 @@ def read_file(filename):
     except: # Everything!
         return ''
 
-version = '0.1'
+version = '0.2'
 
 setup(name='skeletons',
       version=version,
@@ -40,8 +40,8 @@ setup(name='skeletons',
       # -*- Entry points: -*-
       [paste.paster_create_template]
       duply = skeletons:DuplyTemplate
+      lighttpd_mod_fcgi = skeletons:LighttpdModFastCGI
       #lighttpd_mod_proxy = skeletons:LighttpdModProxy
-      #lighttpd_mod_fcgi = skeletons:LighttpdModFastCGI
       #apache_backend = skeletons:ApacheBackend
       """,
       )

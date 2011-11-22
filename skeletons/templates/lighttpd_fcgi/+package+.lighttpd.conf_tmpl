@@ -1,0 +1,31 @@
+$HTTP["host"] =~ "{{ site_domains }}" {
+    server.document-root = "{{ project_root }}/{{ package }}/media/"
+    server.follow-symlink = "enable"
+    dir-listing.activate = "disable"
+
+    url.rewrite-once = (
+#        "^(/admin/.*)$" => "", # Uncomment it to disable admin
+        "^\/static\/(.*)$" => "/static/$1",
+        "^\/media\/(.*)$" => "$1",
+        "^/favicon\.ico$" => "/static/img/favicon.ico",
+        "^(/.*)$" => "/fcgi$1",
+    )
+    
+    alias.url = (
+        "/static/" => "{{ project_root }}/{{ package }}/static/",
+    )
+
+    fastcgi.debug = 0
+    fastcgi.server = (
+        "/fcgi" => (
+            "main" => (
+                "socket" => "/var/run/{{package}}/{{ package }}.socket",
+                "check-local" => "disable",
+            )
+        )
+    )
+}
+
+$HTTP["host"] =~ "{{redirects }}" {
+     url.redirect = ( "^(/.*)" => "http://{{ main_domain }}$1" )
+}

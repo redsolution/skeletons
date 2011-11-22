@@ -39,3 +39,22 @@ Variables:
     S3 Key. Default: '__KEY__'
 **secret**
     S3 secret. Default: '__SECRET__'
+
+Lighttpd + mod_fcgi
+````````````````````
+
+**Template name** lighttpd_mod_fcgi
+
+This template contains configuration for lighttpd web server to run website
+ as separate process, launched and monitored by monit deamon.
+
+**domain**
+    Main domain(s). For example: mysite.com, mysite.org, мойсайт.рф
+    IDN domains will be automatically quoted.
+
+**redirects**
+    Alternate hostnames, which will show only redirect to the firdst main site.
+    Example: www.mysite.com, www.mysite.org
+**project_root**  Where your sites are located. Tempaltes suppose that your
+    code located at: ``{{ project_root}}/{{package}}``, so do not include
+    package name into ``project_root``.
